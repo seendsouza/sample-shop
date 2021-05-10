@@ -1,0 +1,52 @@
+.stripe-button {
+  display: block;
+  background: #666ee8;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  border: 0;
+  font-weight: 700;
+  font-size: 0.75rem;
+  width: 100%;
+  max-height: 55px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stripe-button:focus {
+  background: #555abf;
+}
+
+.stripe-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px 0 rgba(50, 50, 93, 0.1),
+    0 3px 6px 0 rgba(0, 0, 0, 0.08);
+}
+
+.stripe-button:active {
+  background: #43458b;
+}
+
+@media only screen and (min-width: 200px) {
+  .stripe-button {
+    height: 35px;
+    min-height: 35px;
+    max-height: 55px;
+  }
+}
+
+@media only screen and (min-width: 150px) and (max-width: 200px) {
+  .stripe-button {
+    height: 25px;
+    min-height: 25px;
+    max-height: 55px;
+  }
+}
+@media only screen and (max-width: 150px) {
+  .stripe-button {
+    height: 25px;
+    min-height: 25px;
+    max-height: 30px;
+  }
+}

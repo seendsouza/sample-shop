@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "OsakaSans";
+  src: local("OsakaSans"), url(../fonts/osaka-re.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: local("Coolvetica"), url(../fonts/coolvetica.ttf) format("truetype");
+}
+
+body {
+  font-family: "Coolvetica", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
