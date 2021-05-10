@@ -80,6 +80,8 @@ SuccessImpl.propTypes = {
   addCart: PropTypes.func.isRequired,
   getCart: PropTypes.func.isRequired,
   location: PropTypes.object,
+  email: PropTypes.string,
+  name: PropTypes.string,
 };
 const mapStateToProps = (state) => ({
   cart: state.cart,
