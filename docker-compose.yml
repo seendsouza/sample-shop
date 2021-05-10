@@ -1,0 +1,37 @@
+version: "3.9"
+   
+services:
+  db:
+    image: mongo 
+    ports:
+      - "27017:27017"
+    volumes:
+      - db-data:/data/db
+    networks:
+      - web
+
+  dev:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile-dev
+    env_file:
+      - $PWD/server/.env.development
+    ports:
+      - 3000:3000
+    volumes:
+      - $PWD:/home/node/app
+    restart: always
+    networks:
+      - web
+
+  stripe:
+    image: stripe/stripe-cli
+    command: listen --api-key ${STRIPE_SECRET_KEY} --device-name ${STRIPE_DEVICE_NAME} --forward-to http://dev:3000/api/payments/stripe/webhook --events checkout.session.completed
+    networks:
+      - web
+
+volumes:
+  db-data:
+
+networks:
+  web:
