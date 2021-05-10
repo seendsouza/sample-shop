@@ -1,0 +1,20 @@
+name: server
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: seendsouza/node-mongo
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install test dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm run test:ci
