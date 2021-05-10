@@ -71,6 +71,13 @@ npm run dev
 
 You should be able to open the site on localhost:3000
 
+### Run (if using Docker)
+
+In / run:
+
+```
+docker-compose up
+```
 
 ## Navigating the site
 
