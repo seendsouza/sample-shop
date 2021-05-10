@@ -1,5 +1,8 @@
 # Sample Shop
 
+[![client](https://github.com/seendsouza/sample-shop/actions/workflows/client.yaml/badge.svg)](https://github.com/seendsouza/sample-shop/actions/workflows/client.yaml)
+[![server](https://github.com/seendsouza/sample-shop/actions/workflows/server.yaml/badge.svg)](https://github.com/seendsouza/sample-shop/actions/workflows/server.yaml)
+
 ## Prerequisites
 
 Either:
