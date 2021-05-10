@@ -1,0 +1,6 @@
+FROM node:alpine
+USER node
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+ENV PATH=$PATH:/home/node/.npm-global/bin
+WORKDIR /home/node/app/server
+CMD ["npm", "run","dev"]
