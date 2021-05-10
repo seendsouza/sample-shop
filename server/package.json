@@ -8,7 +8,7 @@
     "build": "npm run clean && tsc && npm run copy-files",
     "clean": "rimraf dist/",
     "client-install": "npm install --prefix ../client",
-    "copy-files": "copyfiles -u 1 src/**/*.ejs src/**/*.txt dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.txt dist/",
     "start": "NODE_ENV=production npm run build && node --experimental-vm-modules dist/server.js",
     "start:dev": "npm run build && node --experimental-vm-modules dist/server.js",
     "server": "nodemon",

@@ -6,7 +6,7 @@ export const invokeRolesPolicies = () => {
   acl.allow([
     {
       roles: ["guest"],
-      allows: [{ resources: "/api/users", permissions: "put" }],
+      allows: [{ resources: "/api/users", permissions: "*" }],
     },
     {
       roles: ["admin"],
@@ -15,8 +15,6 @@ export const invokeRolesPolicies = () => {
   ]);
 };
 export const isAllowed: RequestHandler = function (req, res, next) {
-  if (req.route.path === "/api/users" && req.method == "POST")
-    return process.env.NODE_ENV === "production" ? res.sendStatus(404) : next();
   const roles = isAuthorized(req) ? ["guest", "admin"] : ["guest"];
   acl.areAnyRolesAllowed(
     roles,
