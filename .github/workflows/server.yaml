@@ -7,8 +7,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container: seendsouza/node-mongo
-    env:
-      JWT_SECRET: jwt-secret
     defaults:
       run:
         working-directory: server
@@ -20,3 +18,5 @@ jobs:
         run: npm run build
       - name: Test
         run: npm run test:ci
+        env:
+          JWT_SECRET: jwt_secret

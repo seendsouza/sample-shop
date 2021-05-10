@@ -140,7 +140,6 @@ describe("Product CRUD tests:", () => {
           image:
             "https://react.semantic-ui.com/images/avatar/large/matthew.png",
           description: "description",
-          _id: "608208c6a28e4800424adf69",
           name: "new",
         })
         .expect(200)
@@ -170,16 +169,16 @@ describe("Product CRUD tests:", () => {
     it("should return a 403 without authentication", (done) => {
       agent
         .post(`/api/products`)
-        .expect(403)
         .send({
           qty: 178,
-
+          description: "description",
           price: 52.33,
           image:
             "https://react.semantic-ui.com/images/avatar/large/matthew.png",
           _id: "608208c6a28e4800424adf69",
           name: "new",
         })
+        .expect(403)
         .end((err, res) => {
           if (err) {
             return done(err);
@@ -242,7 +241,6 @@ describe("Product CRUD tests:", () => {
     it("should return a 403 without authentication", (done) => {
       agent
         .put(`/api/products/${product._id}`)
-        .expect(403)
         .send({
           qty: 178,
 
@@ -253,6 +251,7 @@ describe("Product CRUD tests:", () => {
           _id: "608208c6a28e4800424adf69",
           name: "new",
         })
+        .expect(403)
         .end((err, res) => {
           if (err) {
             return done(err);
